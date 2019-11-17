@@ -1,0 +1,18 @@
+IDEAS FOR PROEJCT:
+
+Objective measures of genres
+Different rulesets for different genres
+Types of instruments that go together in certain genres
+
+Pattern ideas:
+Enforce time signatures (ignore first measure?)
+Check that instruments match cleft (tuba and bass cleft)
+Check for excessive rests for all instruments
+Check for accident note during long rest
+Check for more than 10 notes on piano piece
+Check for hands too far apart on piano piece
+Check for piano playing same note with both hands at same time
+
+Stretch ideas:
+Check for proper band enforcement
+Triples && Duplets?
