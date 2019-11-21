@@ -21,3 +21,27 @@ Triples && Duplets?
 
 
 https://www.researchgate.net/publication/325975877_Static_code_analysis_to_measure_the_quality_of_musical_scores
+
+Doable Counterpoint rules:
+
+1. Avoid tritones (A-D#, F-B)
+2. Allowed Intervals: Perfect Fourth, Fifth, Octave, major and minor second, major and minor third, ascending minor sixth.
+    After ascending minor sixth, must be followed by downward motion.
+3. Consecutive skips (interval larger than a step) should be in opposite directions
+4. If writing two skips in the same direction, the second must be smaller than the first The first and third note may not 
+    be dissonant. These three notes should be from the same triad. These should not span more than an octave when possible.
+    (Two skips in the same direction should be avoided when possible)
+5. Counterpoint should begin and end on a perfect consonance (Same note, a fifth, a octave higher)
+    (Allowed to begin on a rest and other notes)
+6. Contrary motion should be the norm
+7. Perfect consonances must be approached through oblique or contrary motion (contrary=opposite directions, oblique=one stays 
+    the same, the other moves)
+8. Imperfect consonances may be approached however (major and minor thirds and sixths)
+9. Interval of a tenth should be avoided
+10. In general, build upward from bass to start (Not sure how enforceable this is)
+
+Achieved in parallel while walking the song:
+1, 2, 3, 4, 6, 7, 8, 9, 10 (maybe)
+
+Achieved looking at beginning and end:
+5
