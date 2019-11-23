@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<museScore version="2.06">
+  <programVersion>2.3.2</programVersion>
+  <programRevision>4592407</programRevision>
+  <Score>
+    <LayerTag id="0" tag="default"></LayerTag>
+    <currentLayer>0</currentLayer>
+    <Synthesizer>
+      </Synthesizer>
+    <Division>480</Division>
+    <Style>
+      <showMeasureNumberOne>1</showMeasureNumberOne>
+      <measureNumberInterval>1</measureNumberInterval>
+      <measureNumberSystem>0</measureNumberSystem>
+      <page-layout>
+        <page-height>1683.36</page-height>
+        <page-width>1190.88</page-width>
+        <page-margins type="even">
+          <left-margin>56.6929</left-margin>
+          <right-margin>56.6929</right-margin>
+          <top-margin>56.6929</top-margin>
+          <bottom-margin>113.386</bottom-margin>
+          </page-margins>
+        <page-margins type="odd">
+          <left-margin>56.6929</left-margin>
+          <right-margin>56.6929</right-margin>
+          <top-margin>56.6929</top-margin>
+          <bottom-margin>113.386</bottom-margin>
+          </page-margins>
+        </page-layout>
+      <Spatium>1.76389</Spatium>
+      </Style>
+    <showInvisible>1</showInvisible>
+    <showUnprintable>1</showUnprintable>
+    <showFrames>1</showFrames>
+    <showMargins>0</showMargins>
+    <metaTag name="arranger"></metaTag>
+    <metaTag name="composer">Johann Joseph Fux (1660-1741)</metaTag>
+    <metaTag name="copyright"></metaTag>
+    <metaTag name="creationDate">2018-08-18</metaTag>
+    <metaTag name="lyricist"></metaTag>
+    <metaTag name="movementNumber"></metaTag>
+    <metaTag name="movementTitle"></metaTag>
+    <metaTag name="platform">Microsoft Windows</metaTag>
+    <metaTag name="poet"></metaTag>
+    <metaTag name="source"></metaTag>
+    <metaTag name="translator"></metaTag>
+    <metaTag name="workNumber"></metaTag>
+    <metaTag name="workTitle">Gradus ad Parnassum</metaTag>
+    <PageList>
+      <Page>
+        <System>
+          </System>
+        <System>
+          </System>
+        <System>
+          </System>
+        </Page>
+      </PageList>
+    <Part>
+      <Staff id="1">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+          </StaffType>
+        <bracket type="1" span="3"/>
+        </Staff>
+      <trackName>Alto</trackName>
+      <Instrument>
+        <longName>Alto</longName>
+        <shortName>A.</shortName>
+        <trackName>Alto</trackName>
+        <minPitchP>52</minPitchP>
+        <maxPitchP>77</maxPitchP>
+        <minPitchA>55</minPitchA>
+        <maxPitchA>74</maxPitchA>
+        <instrumentId>voice.alto</instrumentId>
+        <Articulation>
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="staccatissimo">
+          <velocity>100</velocity>
+          <gateTime>33</gateTime>
+          </Articulation>
+        <Articulation name="staccato">
+          <velocity>100</velocity>
+          <gateTime>50</gateTime>
+          </Articulation>
+        <Articulation name="portato">
+          <velocity>100</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="tenuto">
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="marcato">
+          <velocity>120</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="sforzato">
+          <velocity>120</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Channel>
+          <program value="52"/>
+          <synti>Fluid</synti>
+          </Channel>
+        </Instrument>
+      </Part>
+    <Part>
+      <Staff id="2">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+          </StaffType>
+        <defaultClef>G8vb</defaultClef>
+        </Staff>
+      <trackName>Tenor</trackName>
+      <Instrument>
+        <longName>Tenor</longName>
+        <shortName>T.</shortName>
+        <trackName>Tenor</trackName>
+        <minPitchP>48</minPitchP>
+        <maxPitchP>72</maxPitchP>
+        <minPitchA>48</minPitchA>
+        <maxPitchA>69</maxPitchA>
+        <instrumentId>voice.tenor</instrumentId>
+        <clef>G8vb</clef>
+        <Articulation>
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="staccatissimo">
+          <velocity>100</velocity>
+          <gateTime>33</gateTime>
+          </Articulation>
+        <Articulation name="staccato">
+          <velocity>100</velocity>
+          <gateTime>50</gateTime>
+          </Articulation>
+        <Articulation name="portato">
+          <velocity>100</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="tenuto">
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="marcato">
+          <velocity>120</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="sforzato">
+          <velocity>120</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Channel>
+          <program value="52"/>
+          <synti>Fluid</synti>
+          </Channel>
+        </Instrument>
+      </Part>
+    <Part>
+      <Staff id="3">
+        <StaffType group="pitched">
+          <name>stdNormal</name>
+          </StaffType>
+        <defaultClef>F</defaultClef>
+        <bracket type="-1" span="0"/>
+        </Staff>
+      <trackName>Bajo</trackName>
+      <Instrument>
+        <longName>Bass</longName>
+        <shortName>B.</shortName>
+        <trackName>Bajo</trackName>
+        <minPitchP>38</minPitchP>
+        <maxPitchP>62</maxPitchP>
+        <minPitchA>41</minPitchA>
+        <maxPitchA>60</maxPitchA>
+        <instrumentId>voice.bass</instrumentId>
+        <clef>F</clef>
+        <Articulation>
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="staccatissimo">
+          <velocity>100</velocity>
+          <gateTime>33</gateTime>
+          </Articulation>
+        <Articulation name="staccato">
+          <velocity>100</velocity>
+          <gateTime>50</gateTime>
+          </Articulation>
+        <Articulation name="portato">
+          <velocity>100</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="tenuto">
+          <velocity>100</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Articulation name="marcato">
+          <velocity>120</velocity>
+          <gateTime>67</gateTime>
+          </Articulation>
+        <Articulation name="sforzato">
+          <velocity>120</velocity>
+          <gateTime>100</gateTime>
+          </Articulation>
+        <Channel>
+          <program value="52"/>
+          <synti>Fluid</synti>
+          </Channel>
+        </Instrument>
+      </Part>
+    <Staff id="1">
+      <VBox>
+        <height>10</height>
+        <Text>
+          <style>Title</style>
+          <text>Gradus ad Parnassum</text>
+          </Text>
+        <Text>
+          <style>Subtitle</style>
+          <text>Example:  Pag. 89</text>
+          </Text>
+        <Text>
+          <style>Composer</style>
+          <text>Johann Joseph Fux (1660-1741)</text>
+          </Text>
+        </VBox>
+      <TBox>
+        <height>1</height>
+        <Text>
+          <pos x="11.6881" y="1.39977"/>
+          <style>Frame</style>
+          <text><i>Example from the original book</i> -&gt;  <font size="9"></font>https://imslp.org/wiki/Gradus_ad_Parnassum_(Fux,_Johann_Joseph)
+
+
+
+
+</text>
+          </Text>
+        </TBox>
+      <Measure number="1">
+        <TimeSig>
+          <subtype>2</subtype>
+          <sigN>2</sigN>
+          <sigD>2</sigD>
+          <showCourtesySig>1</showCourtesySig>
+          </TimeSig>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>10</text>
+            </Lyrics>
+          <Note>
+            <pitch>65</pitch>
+            <tpc>13</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="2">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.626201" y="7.5"/>
+            <text>10</text>
+            </Lyrics>
+          <Note>
+            <pitch>69</pitch>
+            <tpc>17</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="3">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>10</text>
+            </Lyrics>
+          <Note>
+            <pitch>67</pitch>
+            <tpc>15</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="4">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>10</text>
+            </Lyrics>
+          <Note>
+            <pitch>65</pitch>
+            <tpc>13</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="5">
+        <TextLine id="2">
+          <diagonal>1</diagonal>
+          <lineWidth>0.15</lineWidth>
+          <lineColor r="255" g="0" b="0" a="255"/>
+          <Segment>
+            <subtype>0</subtype>
+            <off2 x="-4.69922" y="9.89877"/>
+            <pos x="51.4053" y="4.29829"/>
+            </Segment>
+          </TextLine>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>6</text>
+            </Lyrics>
+          <Note>
+            <color r="255" g="0" b="0" a="255"/>
+            <pitch>64</pitch>
+            <tpc>18</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="6">
+        <endSpanner id="2"/>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>8</text>
+            </Lyrics>
+          <Note>
+            <pitch>65</pitch>
+            <tpc>13</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="7">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>5</text>
+            </Lyrics>
+          <Note>
+            <pitch>64</pitch>
+            <tpc>18</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="8">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>8</text>
+            </Lyrics>
+          <Note>
+            <pitch>67</pitch>
+            <tpc>15</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="9">
+        <MeasureNumber>
+          <style>Measure Number</style>
+          <text>9</text>
+          </MeasureNumber>
+        <TextLine id="3">
+          <diagonal>1</diagonal>
+          <lineWidth>0.15</lineWidth>
+          <lineColor r="255" g="0" b="0" a="255"/>
+          <Segment>
+            <subtype>0</subtype>
+            <off2 x="-5.09917" y="10.7083"/>
+            <pos x="90.9677" y="4.17851"/>
+            </Segment>
+          </TextLine>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="7.5"/>
+            <text>6</text>
+            </Lyrics>
+          <Note>
+            <pitch>62</pitch>
+            <tpc>16</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="10">
+        <endSpanner id="3"/>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.626201" y="7.5"/>
+            <text>6#</text>
+            </Lyrics>
+          <Note>
+            <color r="255" g="0" b="0" a="255"/>
+            <Accidental>
+              <subtype>sharp</subtype>
+              </Accidental>
+            <pitch>61</pitch>
+            <tpc>21</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="11">
+        <TimeSig>
+          <visible>0</visible>
+          <sigN>4</sigN>
+          <sigD>2</sigD>
+          <showCourtesySig>0</showCourtesySig>
+          </TimeSig>
+        <Chord>
+          <durationType>breve</durationType>
+          <Lyrics>
+            <pos x="0.428906" y="7.5"/>
+            <text>8</text>
+            </Lyrics>
+          <Note>
+            <pitch>62</pitch>
+            <tpc>16</tpc>
+            <head>13</head>
+            </Note>
+          </Chord>
+        <BarLine>
+          <subtype>end</subtype>
+          <span>1</span>
+          </BarLine>
+        </Measure>
+      </Staff>
+    <Staff id="2">
+      <Measure number="1">
+        <TimeSig>
+          <subtype>2</subtype>
+          <sigN>2</sigN>
+          <sigD>2</sigD>
+          <showCourtesySig>1</showCourtesySig>
+          </TimeSig>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.990312" y="11"/>
+            <text>8</text>
+            </Lyrics>
+          <Note>
+            <pitch>62</pitch>
+            <tpc>16</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="2">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.990312" y="11"/>
+            <text>5</text>
+            </Lyrics>
+          <Note>
+            <pitch>60</pitch>
+            <tpc>14</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="3">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.990312" y="11"/>
+            <text>6</text>
+            </Lyrics>
+          <Note>
+            <pitch>60</pitch>
+            <tpc>14</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="4">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.990312" y="11"/>
+            <text>8</text>
+            </Lyrics>
+          <Note>
+            <pitch>62</pitch>
+            <tpc>16</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="5">
+        <StaffText>
+          <pos x="3.68176" y="-4.13527"/>
+          <color r="255" g="0" b="0" a="255"/>
+          <foregroundColor r="255" g="0" b="0" a="255"/>
+          <text><font size="9"></font>Augmented 4th</text>
+          </StaffText>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.990312" y="11"/>
+            <text>3</text>
+            </Lyrics>
+          <Note>
+            <color r="255" g="0" b="0" a="255"/>
+            <Accidental>
+              <subtype>flat</subtype>
+              </Accidental>
+            <pitch>58</pitch>
+            <tpc>12</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="6">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="11"/>
+            <text>3</text>
+            </Lyrics>
+          <Note>
+            <pitch>57</pitch>
+            <tpc>17</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="7">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.990312" y="11"/>
+            <text>3</text>
+            </Lyrics>
+          <Note>
+            <pitch>60</pitch>
+            <tpc>14</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="8">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.990312" y="11"/>
+            <text>3</text>
+            </Lyrics>
+          <Note>
+            <Accidental>
+              <subtype>flat</subtype>
+              </Accidental>
+            <pitch>58</pitch>
+            <tpc>12</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="9">
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="11"/>
+            <text>3</text>
+            </Lyrics>
+          <Note>
+            <pitch>57</pitch>
+            <tpc>17</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="10">
+        <StaffText>
+          <pos x="3.81938" y="-4.25305"/>
+          <color r="255" g="0" b="0" a="255"/>
+          <foregroundColor r="255" g="0" b="0" a="255"/>
+          <text><font size="9"></font>Augmeted 4th</text>
+          </StaffText>
+        <Chord>
+          <durationType>whole</durationType>
+          <Lyrics>
+            <pos x="0.32625" y="11"/>
+            <text>3</text>
+            </Lyrics>
+          <Note>
+            <color r="255" g="0" b="0" a="255"/>
+            <pitch>55</pitch>
+            <tpc>15</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="11">
+        <TimeSig>
+          <visible>0</visible>
+          <sigN>4</sigN>
+          <sigD>2</sigD>
+          <showCourtesySig>1</showCourtesySig>
+          </TimeSig>
+        <Chord>
+          <durationType>breve</durationType>
+          <Lyrics>
+            <pos x="0.428906" y="11"/>
+            <text>5</text>
+            </Lyrics>
+          <Note>
+            <pitch>57</pitch>
+            <tpc>17</tpc>
+            <head>13</head>
+            </Note>
+          </Chord>
+        <BarLine>
+          <subtype>end</subtype>
+          <span>1</span>
+          </BarLine>
+        </Measure>
+      </Staff>
+    <Staff id="3">
+      <Measure number="1">
+        <TimeSig>
+          <subtype>2</subtype>
+          <sigN>2</sigN>
+          <sigD>2</sigD>
+          <showCourtesySig>1</showCourtesySig>
+          </TimeSig>
+        <StaffText>
+          <pos x="17.1972" y="9.19786"/>
+          <text>In this example, Fux uses the diminished 5th chords in its 
+first inversion so there are two  augmented 4th between  the 
+tenor and the alto.
+Isn't it against his own rules?</text>
+          </StaffText>
+        <StaffText>
+          <pos x="-5.18916" y="-3.96001"/>
+          <text><i>C.F</i></text>
+          </StaffText>
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>50</pitch>
+            <tpc>16</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="2">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>53</pitch>
+            <tpc>13</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="3">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>52</pitch>
+            <tpc>18</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="4">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>50</pitch>
+            <tpc>16</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="5">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <color r="255" g="0" b="0" a="255"/>
+            <pitch>55</pitch>
+            <tpc>15</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="6">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>53</pitch>
+            <tpc>13</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="7">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>57</pitch>
+            <tpc>17</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="8">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>55</pitch>
+            <tpc>15</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="9">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <pitch>53</pitch>
+            <tpc>13</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="10">
+        <Chord>
+          <durationType>whole</durationType>
+          <Note>
+            <color r="255" g="0" b="0" a="255"/>
+            <pitch>52</pitch>
+            <tpc>18</tpc>
+            </Note>
+          </Chord>
+        </Measure>
+      <Measure number="11">
+        <TimeSig>
+          <visible>0</visible>
+          <sigN>4</sigN>
+          <sigD>2</sigD>
+          <showCourtesySig>1</showCourtesySig>
+          </TimeSig>
+        <Chord>
+          <durationType>breve</durationType>
+          <Note>
+            <pitch>50</pitch>
+            <tpc>16</tpc>
+            <head>13</head>
+            </Note>
+          </Chord>
+        <BarLine>
+          <subtype>end</subtype>
+          <span>1</span>
+          </BarLine>
+        </Measure>
+      </Staff>
+    </Score>
+  </museScore>
