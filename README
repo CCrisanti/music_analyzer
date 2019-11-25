@@ -31,7 +31,7 @@ Doable Counterpoint rules:
 4. If writing two skips in the same direction, the second must be smaller than the first The first and third note may not 
     be dissonant. These three notes should be from the same triad. These should not span more than an octave when possible.
     (Two skips in the same direction should be avoided when possible)
-5. Counterpoint should begin and end on a perfect consonance (Same note, a fifth, a octave higher)
+5. Counterpoint should begin and end on a perfect consonance (Same note, a perfect fifth, a perfect fourth, a octave higher)
     (Allowed to begin on a rest and other notes)
 6. Contrary motion should be the norm
 7. Perfect consonances must be approached through oblique or contrary motion (contrary=opposite directions, oblique=one stays 
@@ -45,3 +45,16 @@ Achieved in parallel while walking the song:
 
 Achieved looking at beginning and end:
 5
+
+Sources:
+(Dissonances and consonances)
+@book{schuijer_2009, place={Rochester, N.Y}, title={Analyzing atonal music: pitch-class set theory and its contexts}, 
+      publisher={University of Rochester Press}, author={Schuijer, Michiel}, year={2009}} 
+
+(Counterpoint Rules)
+@book{fux_mann_1971, place={New York}, title={The study of counterpoint: from Johann Joseph Fuxs Gradus ad parnassum},
+      publisher={W.W. Norton}, author={Fux, Johann Joseph and Mann, Alfred}, year={1971}} 
+
+(Dissonances and consonances)
+@book{persichetti_1978, place={New York}, title={Twentieth Century Harmony}, 
+      publisher={Norton}, author={Persichetti, Vincent}, year={1978}} 

@@ -59,6 +59,55 @@ class Note:
         return_string = "Note with pitch of " + self.pitch + " and TPC of " + self.tpc + " and chromatic note of " + self.chromaticNote
         return return_string
 
+def rule1(prev_pitch, cur_pitch):
+    return abs(prev_pitch - cur_pitch) == 6
+
+def rule2(prev_prev_pitch, prev_pitch, cur_pitch):
+    diff = abs(prev_prev_pitch - prev_pitch)
+    if  diff == 6 or diff == 9 or diff == 10 or diff == 11 or dif > 12 or (prev_prev_pitch - prev_pitch) == 8:
+        return True
+    elif (prev_prev_pitch - prev_pitch) == -8:
+        return cur_pitch > prev_pitch
+    return False
+
+def rule3(prev_prev_pitch, prev_pitch, cur_pitch):
+    if prev_prev_pitch - prev_pitch > 2 and prev_pitch - cur_pitch > 2:
+        return True
+    elif prev_prev_pitch - prev_pitch < -2 and prev_prev_pitch - prev_pitch < -2:
+        return True
+    return False
+
+def rule4(prev_prev_pitch, prev_pitch, cur_pitch):
+    ppp_dif = abs(prev_prev_pitch - prev_pitch) 
+    pc_dif = abs(prev_pitch - cur_pitch)
+    ppc_dif = abs(prev_prev_pitch - cur_pitch)
+
+    if rule3(prev_prev_pitch, prev_pitch, cur_pitch):
+        if ppp_dif < pc_dif:
+            return True
+        if ppc_dif == 1 or ppc_dif == 2 or ppc_dif == 10 or ppc_dif == 11 or ppc_dif == 13 or ppc_dif == 13:
+            return True
+        if ppp_dif != 3 or ppp_dif != 4 or pc_dif != 3 or pc_dif != 4:
+            return True
+    return False
+
+# Must define what a rest is later
+# Should be called once for beginning notes and once for last notes
+# May have to deal with different instruments having different pitches for the same notes
+# (E.G. Tuba C is 20 pitch and Clarinet C is 35 Pitch)  
+def rule5(notes):
+    rest=0 #DEFINE LATER
+    consecutive_notes = False
+    for note1 in range(len(notes)):
+        for note2 in range(note1, len(notes)):
+            if notes[note1] != rest and notes[note2] != rest:
+                consecutive_notes = True
+                dif = abs(notes[note1] - notes[note2])
+                if dif == 0 or dif == 5 or dif == 7 or dif == 12:
+                    return False
+    return consecutive_notes
+
+            
 
 # In[13]:
 
