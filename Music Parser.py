@@ -107,6 +107,15 @@ def rule5(notes):
                     return False
     return consecutive_notes
 
+#Avoid intervals of ten
+def rule9(pre_pitch, cur_pitch):
+    #15 half steps is a minor tenth, 16 half steps is a major tenth
+    major_tenth = 15
+    minor_tenth = 16
+    interval = abs(prev_pitch - cur_pitch)
+    if interval == major_tenth or interval == minor_tenth:
+        return True
+    return False
             
 
 # In[13]:
