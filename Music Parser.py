@@ -107,9 +107,21 @@ def rule5(notes):
                     return False
     return consecutive_notes
 
-#Perfect consonances must be approached through oblique or contrary motion
-#This needs to examine two staffs
-def rule7(prev_prev_pitch_one, prev_pitch_one, cur_pitch_one, prev_prev_pitch_two, prev_pitch_two, cur_pitch_two:
+# Contrary motion should be the norm
+# This checks a single example, perhaps we loop it for the entire song, and see if it is followed most of the time?
+def rule6(prev_pitch_one, cur_pitch_one,prev_pitch_two, cur_pitch_two):
+    interval = abs(cur_pitch_one - cur_pitch_two)
+    prev_interval = abs(prev_pitch_one - prev_pitch_two)
+          
+    #If they approach or stay the same (in other words not apart)
+    if pre_interval <= prev_prev_interval:
+        return False
+    
+    return True
+
+# Perfect consonances must be approached through oblique or contrary motion
+# This needs to examine two staffs
+def rule7(prev_prev_pitch_one, prev_pitch_one, cur_pitch_one, prev_prev_pitch_two, prev_pitch_two, cur_pitch_two):
     perfect_fifth = 7
     perfect_octave = 12
     interval = abs(cur_pitch_one - cur_pitch_two)
@@ -122,7 +134,7 @@ def rule7(prev_prev_pitch_one, prev_pitch_one, cur_pitch_one, prev_prev_pitch_tw
               return False
     return True
         
-#Avoid intervals of ten
+# Avoid intervals of ten
 def rule9(pre_pitch, cur_pitch):
     #15 half steps is a minor tenth, 16 half steps is a major tenth
     major_tenth = 15
