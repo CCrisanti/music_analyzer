@@ -3,9 +3,9 @@
 
 # In[1]:
 
-
+import sys
 import xml.etree.ElementTree as ET
-tree = ET.parse( "SimpleGifts.mscx" )
+tree = ET.parse(sys.argv[1])
 root = tree.getroot()
 
 
@@ -59,42 +59,67 @@ class Note:
         return_string = "Note with pitch of " + self.pitch + " and TPC of " + self.tpc + " and chromatic note of " + self.chromaticNote
         return return_string
 
-def rule1(prev_pitch, cur_pitch):
-    return abs(prev_pitch - cur_pitch) == 6
+# Rule 1: Avoid Tritone and seven semitone intervals over three notes
+# This rule takes in the pitch two notes ago, a note ago, and the current note
+# If the pitch difference between the two previous notes is less than 6 in one 
+# direction and the difference in pitch between the previous and current note
+# is 6, in the same direction, than a tritone has been formed over the interval
+# Returns true if this rule is violated
+def rule1(prev_prev_pitch, prev_pitch, cur_pitch):
+    if prev_prev_pitch - prev_pitch > 0 and prev_prev_pitch - prev_pitch > 6:
+        return prev_prev_pitch - cur_pitch == 6
+    if prev_prev_pitch - prev_pitch < 0 and prev_prev_pitch - prev_pitch > -6 :
+        return prev_prev_pitch - cur_pitch == -6        
 
+# Rule 2: Check if notes follow allowed intervals
+# This rule takes in the pitch two notes ago, a note ago, and the current note
+# First we check if the interval between the two previous notes is acceptable
+# Then we check if the interval of the previous two notes is a minor sixth.
+# If it is, we check if the following note is downward motion.
+# If this rule is violated, return True
 def rule2(prev_prev_pitch, prev_pitch, cur_pitch):
     diff = abs(prev_prev_pitch - prev_pitch)
-    if  diff == 6 or diff == 9 or diff == 10 or diff == 11 or dif > 12 or (prev_prev_pitch - prev_pitch) == 8:
+    if  diff == 6 or diff == 9 or diff == 10 or diff == 11 or diff > 12 or (prev_prev_pitch - prev_pitch) == 8:
         return True
     elif (prev_prev_pitch - prev_pitch) == -8:
-        return cur_pitch > prev_pitch
+        if cur_pitch is not None:
+            return cur_pitch > prev_pitch
     return False
 
+# Rule 3: Check if consectutive skips are in opposite directions
+# This rule takes in the pitch two notes ago, a note ago, and the current note
+# Checks is the difference between the two previous notes and the difference between 
+# the current not and the previous note are both greater than two or both
+# less than -2.
+# If this rule is violated, return True
 def rule3(prev_prev_pitch, prev_pitch, cur_pitch):
     if prev_prev_pitch - prev_pitch > 2 and prev_pitch - cur_pitch > 2:
         return True
-    elif prev_prev_pitch - prev_pitch < -2 and prev_prev_pitch - prev_pitch < -2:
+    elif prev_prev_pitch - prev_pitch < -2 and prev_pitch - cur_pitch < -2:
         return True
     return False
 
+# Rule 4: Rule for dealing with two skips in a row
+# This rule takes in the pitch two notes ago, a note ago, and the current note
+# Checks if the difference between the two previous notes is less than the 
+# current and previous note. Next, check if the note two notes ago is disonant
+# to the current note. Finally, check if the three notes form a triad.
+# If this rule is violated, return True
 def rule4(prev_prev_pitch, prev_pitch, cur_pitch):
-    ppp_dif = abs(prev_prev_pitch - prev_pitch) 
-    pc_dif = abs(prev_pitch - cur_pitch)
-    ppc_dif = abs(prev_prev_pitch - cur_pitch)
-
     if rule3(prev_prev_pitch, prev_pitch, cur_pitch):
+        ppp_dif = abs(prev_prev_pitch - prev_pitch) 
+        pc_dif = abs(prev_pitch - cur_pitch)
+        ppc_dif = abs(prev_prev_pitch - cur_pitch)
         if ppp_dif < pc_dif:
             return True
         if ppc_dif == 1 or ppc_dif == 2 or ppc_dif == 10 or ppc_dif == 11 or ppc_dif == 13 or ppc_dif == 13:
             return True
-        if ppp_dif != 3 or ppp_dif != 4 or pc_dif != 3 or pc_dif != 4:
+        if (ppp_dif != 3 and ppp_dif != 4) or (pc_dif != 3 and pc_dif != 4):
             return True
     return False
 
 # Must define what a rest is later
-# Should be called once for beginning notes and once for last notes
-# May have to deal with different instruments having different pitches for the same notes
-# (E.G. Tuba C is 20 pitch and Clarinet C is 35 Pitch)  
+# Should be called once for beginning notes and once for last notes 
 def rule5(notes):
     rest=0 #DEFINE LATER
     consecutive_notes = False
@@ -150,7 +175,7 @@ def rule9(pre_pitch, cur_pitch):
 tpcToLetter = ["Fbb", "Cbb", "Gbb", "Dbb", "Abb", "Ebb", "Bbb", "Fb", "Cb", "Gb", "Db", "Ab", "Eb", "Bb", "F", "C", "G", "D", "A", "E", "B", "F#", "C#", "G#", "D#", "A#", "E#", "B#","F##", "C##", "G##", "D##", "A##", "E##", "B##",]
 
 measures = []
-print(list(root))
+#print(list(root))
 #for child in root:
 #    print (child.tag, child.attrib)
 score = root[2]
@@ -227,11 +252,70 @@ for staff in score:
 
 
 # In[14]:
-print(len(measures), "measures")
-#for i in measures:
-#    print(i)
-for instrument in instruments:
-    print(instrument)
-    for measure in instrument.measures:
-        print(measure)
+print(len(instruments[0].measures), "measures")
+for i in measures:
+    print(i)
 
+rule1Violations = 0
+rule2Violations = 0
+rule3Violations = 0
+rule4Violations = 0
+rule5Violations = 0
+rule6Violations = 0
+rule7Violations = 0
+rule8Violations = 0
+rule9Violations = 0
+
+
+first_notes = []
+last_notes = []
+for instrument in instruments:
+    #print(instrument)
+    cur_pitch = None
+    prev_pitch = None
+    prev_prev_pitch = None
+    for measure in instrument.measures:
+        for chord in measure.chords:
+            for note in chord.notes:
+                if prev_pitch is not None:
+                    prev_prev_pitch = int(prev_pitch)
+                if cur_pitch is not None:
+                    prev_pitch = int(cur_pitch)
+                cur_pitch = int(note.pitch)
+            if prev_prev_pitch is not None:
+                if rule1(prev_prev_pitch, prev_pitch, cur_pitch):
+                    rule1Violations += 1
+                    print("Rule 1 Violation")
+                    print("prev_prev_pitch:", prev_prev_pitch)
+                    print("prev_pitch:", prev_pitch)
+                    print("cur_pitch:", cur_pitch)
+                if rule2(prev_prev_pitch, prev_pitch, cur_pitch):
+                    rule2Violations +=1
+                    print("Rule 2 Violation")
+                    print("prev_prev_pitch:", prev_prev_pitch)
+                    print("prev_pitch:", prev_pitch)
+                    print("cur_pitch:", cur_pitch)
+                if rule3(prev_prev_pitch, prev_pitch, cur_pitch):
+                    rule3Violations +=1
+                    print("Rule 3 Violation")
+                    print("prev_prev_pitch:", prev_prev_pitch)
+                    print("prev_pitch:", prev_pitch)
+                    print("cur_pitch:", cur_pitch)
+                if rule4(prev_prev_pitch, prev_pitch, cur_pitch):
+                    rule4Violations +=1
+                    print("Rule 4 Violation")
+                    print("prev_prev_pitch:", prev_prev_pitch)
+                    print("prev_pitch:", prev_pitch)
+                    print("cur_pitch:", cur_pitch)
+    if prev_pitch is not None and cur_pitch is not None:
+        if rule2(prev_pitch, cur_pitch, None):
+            rule2Violations +=1
+            print("Rule 2 Violation")
+            print("prev_prev_pitch:", prev_prev_pitch)
+            print("prev_pitch:", prev_pitch)
+            print("cur_pitch:", cur_pitch)
+
+print(rule1Violations)
+print(rule2Violations)
+print(rule3Violations)
+print(rule4Violations)

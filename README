@@ -24,7 +24,7 @@ https://www.researchgate.net/publication/325975877_Static_code_analysis_to_measu
 
 Doable Counterpoint rules:
 
-1. Avoid tritones (A-D#, F-B)
+1. Avoid tritones over three notes (A-C-D#, F-A-B)
 2. Allowed Intervals: Perfect Fourth, Fifth, Octave, major and minor second, major and minor third, ascending minor sixth.
     After ascending minor sixth, must be followed by downward motion.
 3. Consecutive skips (interval larger than a step) should be in opposite directions
