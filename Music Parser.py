@@ -139,7 +139,7 @@ def rule6(prev_pitch_one, cur_pitch_one,prev_pitch_two, cur_pitch_two):
     prev_interval = abs(prev_pitch_one - prev_pitch_two)
           
     #If they approach or stay the same (in other words not apart)
-    if pre_interval <= prev_prev_interval:
+    if interval <= prev_interval:
         return False
     
     return True
@@ -155,7 +155,7 @@ def rule7(prev_prev_pitch_one, prev_pitch_one, cur_pitch_one, prev_prev_pitch_tw
           prev_prev_interval = abs(prev_prev_pitch_one - prev_prev_pitch_two)
           
           #If they approach or stay the same (in other words not apart)
-          if pre_interval <= prev_prev_interval:
+          if prev_interval <= prev_prev_interval:
               return False
     return True
         
@@ -307,6 +307,11 @@ for instrument in instruments:
                     print("prev_prev_pitch:", prev_prev_pitch)
                     print("prev_pitch:", prev_pitch)
                     print("cur_pitch:", cur_pitch)
+                if rule9(prev_prev_pitch, prev_pitch):
+                    rule4Violations +=1
+                    print("Rule 4 Violation")
+                    print("prev_prev_pitch:", prev_prev_pitch)
+                    print("prev_pitch:", prev_pitch)
     if prev_pitch is not None and cur_pitch is not None:
         if rule2(prev_pitch, cur_pitch, None):
             rule2Violations +=1
@@ -314,8 +319,14 @@ for instrument in instruments:
             print("prev_prev_pitch:", prev_prev_pitch)
             print("prev_pitch:", prev_pitch)
             print("cur_pitch:", cur_pitch)
+        if rule9(prev_pitch, cur_pitch):
+            rule9Violations +=1
+            print("Rule 9 Violation")
+            print("prev_pitch:", prev_pitch)
+            print("cur_pitch:", cur_pitch)
 
 print(rule1Violations)
 print(rule2Violations)
 print(rule3Violations)
 print(rule4Violations)
+print(rule9Violations)
