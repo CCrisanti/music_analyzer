@@ -121,7 +121,7 @@ def rule4(prev_prev_pitch, prev_pitch, cur_pitch):
 # Must define what a rest is later
 # Should be called once for beginning notes and once for last notes 
 def rule5(notes):
-    rest=0 #DEFINE LATER
+    rest=[] #DEFINE LATER
     consecutive_notes = False
     for note1 in range(len(notes)):
         for note2 in range(note1, len(notes)):
@@ -249,7 +249,7 @@ for staff in score:
                             #print( "\t\t\t\t\t", ggchild.tag, ggchild.attrib, ggchild.text )
                             
         #print( "End Staff" ) 
-
+instruments[0].measures.remove(instruments[0].measures[0])
 
 # In[14]:
 print(len(instruments[0].measures), "measures")
@@ -270,7 +270,7 @@ rule9Violations = 0
 first_notes = []
 last_notes = []
 for instrument in instruments:
-    #print(instrument)
+    print(instrument)
     cur_pitch = None
     prev_pitch = None
     prev_prev_pitch = None
@@ -281,6 +281,7 @@ for instrument in instruments:
     prev_prev_tpc = None
     
     for measure in instrument.measures:
+        print(measure)
         for chord in measure.chords:
             for note in chord.notes:
                 if prev_pitch is not None:
@@ -342,8 +343,43 @@ for instrument in instruments:
             print("Note sequence:", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])                    
             #print("prev_pitch:", prev_pitch)
             #print("cur_pitch:", cur_pitch)
+    first_note = instrument.measures[0].chords
+    last_note = instrument.measures[len(instrument.measures)-1].chords
+
+    if first_note != []:
+        first_notes.append(int(first_note[0].notes[0].pitch))
+    else:
+        first_notes.append([])
+    
+    if last_note != []:
+        last_notes.append(int(last_note[len(last_note)-1].notes[0].pitch))
+
+# for instr1 in range(len(instruments)):
+#     for instr2 in range(instr1,len(instruments)):
+#         instr1_cur_pitch = None
+#         instr1_prev_pitch = None
+#         instr1_loc = 0
+
+#         instr2_cur_pitch = None
+#         instr2_prev_pitch = None
+#         instr2_loc = 0
+
+#         currMeasure1 = []
+#         currMeasure2 = [] 
+#         for measure in range(len(instruments[0].measures)):
+#             if instruments[instr1].measures[measure]
+#             for chord in instruments[instr1].measures[measure].chords:
+#                 print(chord)
+
+
+if rule5(first_notes):
+    rule5Violations+=1
+if rule5(last_notes):
+    rule5Violations+=1
+
 print(rule1Violations)
 print(rule2Violations)
 print(rule3Violations)
 print(rule4Violations)
+print(rule5Violations)
 print(rule9Violations)
