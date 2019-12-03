@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <museScore version="3.01">
-  <programVersion>3.0.5</programVersion>
-  <programRevision>58dd23d</programRevision>
+  <programVersion>3.3.0</programVersion>
+  <programRevision>4761df6</programRevision>
   <Score>
     <LayerTag id="0" tag="default"></LayerTag>
     <currentLayer>0</currentLayer>
-    <Synthesizer>
-      </Synthesizer>
     <Division>480</Division>
     <Style>
       <pageWidth>8.27007</pageWidth>
@@ -106,6 +104,7 @@
           <lineDistance>1.5</lineDistance>
           <clef>0</clef>
           <slashStyle>1</slashStyle>
+          <stemless>1</stemless>
           <durations>1</durations>
           <durationFontName>MuseScore Tab French</durationFontName>
           <durationFontSize>15</durationFontSize>
@@ -4019,6 +4018,7 @@
             <actualNotes>3</actualNotes>
             <baseNote>32nd</baseNote>
             <Number>
+              <style>Tuplet</style>
               <text>3</text>
               </Number>
             </Tuplet>

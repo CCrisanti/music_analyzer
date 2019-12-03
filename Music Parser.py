@@ -68,13 +68,13 @@ class Note:
 def rule1(prev_prev_pitch, prev_pitch, cur_pitch):
     if prev_prev_pitch - prev_pitch > 0 and prev_prev_pitch - prev_pitch > 6:
         return prev_prev_pitch - cur_pitch == 6
-    if prev_prev_pitch - prev_pitch < 0 and prev_prev_pitch - prev_pitch > -6 :
+    if prev_prev_pitch - prev_pitch < 0 and prev_prev_pitch - prev_pitch > -6:
         return prev_prev_pitch - cur_pitch == -6        
 
 # Rule 2: Check if notes follow allowed intervals
 # This rule takes in the pitch two notes ago, a note ago, and the current note
 # First we check if the interval between the two previous notes is acceptable
-# Then we check if the interval of the previous two notes is a minor sixth.
+# Then we check if the interval of the previous two notes is an ascending minor sixth.
 # If it is, we check if the following note is downward motion.
 # If this rule is violated, return True
 def rule2(prev_prev_pitch, prev_pitch, cur_pitch):
@@ -252,9 +252,9 @@ for staff in score:
 instruments[0].measures.remove(instruments[0].measures[0])
 
 # In[14]:
-print(len(instruments[0].measures), "measures")
-for i in measures:
-    print(i)
+# print(len(instruments[0].measures), "measures")
+# for i in measures:
+#     print(i)
 
 rule1Violations = 0
 rule2Violations = 0
@@ -270,7 +270,7 @@ rule9Violations = 0
 first_notes = []
 last_notes = []
 for instrument in instruments:
-    print(instrument)
+    #print(instrument)
     cur_pitch = None
     prev_pitch = None
     prev_prev_pitch = None
@@ -280,8 +280,9 @@ for instrument in instruments:
     prev_tpc = None
     prev_prev_tpc = None
     
+    measureNum = 0
     for measure in instrument.measures:
-        print(measure)
+        #print(measure)
         for chord in measure.chords:
             for note in chord.notes:
                 if prev_pitch is not None:
@@ -297,50 +298,51 @@ for instrument in instruments:
             if prev_prev_pitch is not None:
                 if rule1(prev_prev_pitch, prev_pitch, cur_pitch):
                     rule1Violations += 1
-                    print("Rule 1 Violation")
-                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])
+                    print("Rule 1 Violation by", instrument.name ,"at measure", measureNum)
+                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1],'\n')
                     #print("prev_prev_pitch:", prev_prev_pitch)
                     #print("prev_pitch:", prev_pitch)
                     #print("cur_pitch:", cur_pitch)
                 if rule2(prev_prev_pitch, prev_pitch, cur_pitch):
                     rule2Violations +=1
-                    print("Rule 2 Violation")
-                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])                    
+                    print("Rule 2 Violation by", instrument.name ,"at measure", measureNum)
+                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1],'\n')                    
                     #print("prev_prev_pitch:", prev_prev_pitch)
                     #print("prev_pitch:", prev_pitch)
                     #print("cur_pitch:", cur_pitch)
                 if rule3(prev_prev_pitch, prev_pitch, cur_pitch):
                     rule3Violations +=1
-                    print("Rule 3 Violation")
-                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])                    
+                    print("Rule 3 Violation by", instrument.name ,"at measure", measureNum)
+                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1], '\n')                    
                     #print("prev_prev_pitch:", prev_prev_pitch)
                     #print("prev_pitch:", prev_pitch)
                     #print("cur_pitch:", cur_pitch)
                 if rule4(prev_prev_pitch, prev_pitch, cur_pitch):
                     rule4Violations +=1
-                    print("Rule 4 Violation")
-                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])                    
+                    print("Rule 4 Violation by", instrument.name ,"at measure", measureNum)
+                    print("Note sequence:", tpcToLetter[prev_prev_tpc+1], ",", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1], '\n')                    
                     #print("prev_prev_pitch:", prev_prev_pitch)
                     #print("prev_pitch:", prev_pitch)
                     #print("cur_pitch:", cur_pitch)
                 if rule9(prev_prev_pitch, prev_pitch):
                     rule9Violations +=1
-                    print("Rule 9 Violation")
-                    print("Note sequence:", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])                    
+                    print("Rule 9 Violation by", instrument.name ,"at measure", measureNum)
+                    print("Note sequence:", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1], '\n')                    
                     #print("prev_prev_pitch:", prev_prev_pitch)
-                    #print("prev_pitch:", prev_pitch)
+        
+        measureNum+=1            #print("prev_pitch:", prev_pitch)
     if prev_pitch is not None and cur_pitch is not None:
         if rule2(prev_pitch, cur_pitch, None):
             rule2Violations +=1
-            print("Rule 2 Violation")
-            print("Note sequence:", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])                    
+            print("Rule 2 Violation by", instrument.name ,"at measure", measureNum)
+            print("Note sequence:", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1], '\n')                    
             #print("prev_prev_pitch:", prev_prev_pitch)
             #print("prev_pitch:", prev_pitch)
             #print("cur_pitch:", cur_pitch)
         if rule9(prev_pitch, cur_pitch):
             rule9Violations +=1
-            print("Rule 9 Violation")
-            print("Note sequence:", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1])                    
+            print("Rule 9 Violation by", instrument.name ,"at measure", measureNum)
+            print("Note sequence:", tpcToLetter[prev_tpc+1], ",", tpcToLetter[cur_tpc+1], '\n')                    
             #print("prev_pitch:", prev_pitch)
             #print("cur_pitch:", cur_pitch)
     first_note = instrument.measures[0].chords
@@ -377,9 +379,9 @@ if rule5(first_notes):
 if rule5(last_notes):
     rule5Violations+=1
 
-print(rule1Violations)
-print(rule2Violations)
-print(rule3Violations)
-print(rule4Violations)
-print(rule5Violations)
-print(rule9Violations)
+print("Rule 1 Violations:", rule1Violations)
+print("Rule 2 Violations:",rule2Violations)
+print("Rule 3 Violations:",rule3Violations)
+print("Rule 4 Violations:",rule4Violations)
+print("Rule 5 Violations:",rule5Violations)
+#print("Rule 9 Violations:",rule9Violations)
