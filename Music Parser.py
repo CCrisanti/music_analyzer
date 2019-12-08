@@ -118,10 +118,9 @@ def rule4(prev_prev_pitch, prev_pitch, cur_pitch):
             return True
     return False
 
-# Must define what a rest is later
 # Should be called once for beginning notes and once for last notes 
 def rule5(notes):
-    rest=[] #DEFINE LATER
+    rest=[]
     consecutive_notes = False
     for note1 in range(len(notes)):
         for note2 in range(note1, len(notes)):
