@@ -11,5 +11,10 @@ for line in inFile:
 
 print(results)
 print(numLines)
+
+outFileName = input()
+outFile = open(outFileName, 'w')
 for result in results:
     print(result/numLines)
+    outFile.write(str(result/numLines))
+    outFile.write("\n")
