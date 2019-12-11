@@ -42,5 +42,5 @@ if [ "$FILENAME" == "" ]; then
     echo " "
     echo "========================================================"
 else
-    python3 music\ parser $FILENAME $VERBOSE
+    python3 source/music_analyzer.py $FILENAME $VERBOSE
 fi
