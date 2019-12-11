@@ -10,19 +10,20 @@ do
 			;;
 		f)
 			FILENAME=$OPTARG
+            echo $OPTARG
 			;;
-		h|\?)
+		\?)
 			echo "CS6501 Software Artifacts Music Analyzer"
             echo " "
             echo "music_analyzer [options] -f [file]"
             echo " "
             echo "Options"
-            echo "========================================================"
+            echo "=============================================="
             echo " "
-            echo "-v, --verbose    Prints all information about violations"
+            echo "-v     Prints all information about violations"
             echo " "
-            echo "========================================================"
-            break 
+            echo "=============================================="
+            exit
 			;;
 	esac
 done
@@ -37,8 +38,7 @@ if [ "$FILENAME" == "" ]; then
     echo "Options"
     echo "========================================================"
     echo " "
-    echo "-h, --help       Prints this information"
-    echo "-v, --verbose    Prints all information about violations"
+    echo "-v               Prints all information about violations"
     echo " "
     echo "========================================================"
 else

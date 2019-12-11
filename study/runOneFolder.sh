@@ -1,8 +1,7 @@
 #!/bin/bash
 cd ..
 for f in $1/*/*.mscx; do
-    echo $f
-    ./music_analyzer.sh -f $f
+    ./music_analyzer -f $f
     echo " "
 done
 
