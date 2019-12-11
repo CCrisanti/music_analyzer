@@ -1,60 +1,20 @@
-IDEAS FOR PROEJCT:
+Music Analyzer/
 
-Objective measures of genres
-Different rulesets for different genres
-Types of instruments that go together in certain genres
+This a tool to statically analyze sheet music in the form of .mscx files.\
+Currently, this tool can analyze pieces from the genre of baroque counterpoint.\
+It does so by checking if a piece violates certain rules created by the authors that come\ 
+from the book *The Study of Counterpoint: From Johann Joseph Fux's Gradus Ad Parnassum*\
+This tool is a proof of concept written as the developers final project for the class\ 
+CS6501: Software Artifacts at the University of Virginia\
 
-Check proper formatting for XML?
+To run this tool run, you must have a piece of music in .mscx format, or you can use one\
+of our test files located in the music directory. The following commands can be used to\
+download and run this tool.\
 
-Pattern ideas:
-Enforce time signatures (ignore first measure?)
-Check that instruments match cleft (tuba and bass cleft)
-Check for excessive rests for all instruments
-Check for accident note during long rest
-Check for more than 10 notes on piano piece
-Check for hands too far apart on piano piece
-Check for piano playing same note with both hands at same time
+git clone https://github.com/CCrisanti/music_analyzer
+cd music_analyzer
+./music_analyzer -f path/to/song
 
-Stretch ideas:
-Check for proper band enforcement
-Triples && Duplets?
-
-
-https://www.researchgate.net/publication/325975877_Static_code_analysis_to_measure_the_quality_of_musical_scores
-
-Doable Counterpoint rules:
-
-1. Avoid tritones over three notes (A-C-D#, F-A-B)
-2. Allowed Intervals: Perfect Fourth, Fifth, Octave, major and minor second, major and minor third, ascending minor sixth.
-    After ascending minor sixth, must be followed by downward motion.
-3. Consecutive skips (interval larger than a step) should be in opposite directions
-4. If writing two skips in the same direction, the second must be smaller than the first The first and third note may not 
-    be dissonant. These three notes should be from the same triad. These should not span more than an octave when possible.
-    (Two skips in the same direction should be avoided when possible)
-5. Counterpoint should begin and end on a perfect consonance (Same note, a perfect fifth, a perfect fourth, a octave higher)
-    (Allowed to begin on a rest and other notes)
-6. Contrary motion should be the norm
-7. Perfect consonances must be approached through oblique or contrary motion (contrary=opposite directions, oblique=one stays 
-    the same, the other moves)
-8. Imperfect consonances may be approached however (major and minor thirds and sixths)
-9. Interval of a tenth should be avoided
-10. In general, build upward from bass to start (Not sure how enforceable this is)
-
-Achieved in parallel while walking the song:
-1, 2, 3, 4, 6, 7, 8, 9, 10 (maybe)
-
-Achieved looking at beginning and end:
-5
-
-Sources:
-(Dissonances and consonances)
-@book{schuijer_2009, place={Rochester, N.Y}, title={Analyzing atonal music: pitch-class set theory and its contexts}, 
-      publisher={University of Rochester Press}, author={Schuijer, Michiel}, year={2009}} 
-
-(Counterpoint Rules)
-@book{fux_mann_1971, place={New York}, title={The study of counterpoint: from Johann Joseph Fuxs Gradus ad parnassum},
-      publisher={W.W. Norton}, author={Fux, Johann Joseph and Mann, Alfred}, year={1971}} 
-
-(Dissonances and consonances)
-@book{persichetti_1978, place={New York}, title={Twentieth Century Harmony}, 
-      publisher={Norton}, author={Persichetti, Vincent}, year={1978}} 
+The following flags can be passed to the analyzer:\
+-v : This will activate verbose mode, which will report where each error occurs\
+-h : Displays text to help with running the tool\
