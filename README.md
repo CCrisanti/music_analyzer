@@ -8,10 +8,26 @@ written as the developers final project for the class CS6501: Software Artifacts
 To run this tool run, you must have a piece of music in .mscx format, or you can use one of our test files located in the 
 music directory. The following commands can be used to download and run this tool.
 
-git clone https://github.com/CCrisanti/music_analyzer  
-cd music_analyzer  
-./music_analyzer -f path/to/song  
+```
+$ git clone https://github.com/CCrisanti/music_analyzer  
+$ cd music_analyzer  
+$ ./music_analyzer -f path/to/song  
+```
 
 The following flags can be passed to the analyzer:\
 -v : This will activate verbose mode, which will report where each error occurs\
 -h : Displays text to help with running the tool\
+
+### Study
+To replicate our study run the following command:
+```
+$ cd study
+$ ./runOneFolder.sh music/low
+$ compileResults.py
+```
+The python script will the require a name for the output results. For our purposes we use aName.txt
+```
+mv aName.txt compiledResults
+rm outFile.txt
+```
+Repeat this process with music/med and music/high. Now in compiledResults should be the same counts in our paper.
